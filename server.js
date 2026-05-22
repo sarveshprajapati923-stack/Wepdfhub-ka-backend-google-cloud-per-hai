@@ -32,7 +32,6 @@ app.use(
     }
   })
 );
-app.use(express.static(path.join(__dirname, "public")));
 
 app.disable("x-powered-by");
 app.use(express.json({ limit: "2mb" }));
@@ -98,17 +97,7 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// public/index.html serve hoga
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
-/* ================= TOOL PAGE ROUTE ================= */
-app.get("/:tool", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "tool.html"));
-});
-app.get('/protect-pdf', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'tool.html'));
-});
+
 app.post("/api/protect-pdf", upload.single("file"), async (req, res) => {
   let filePath = null;
   let outputPath = null;
