@@ -15,7 +15,7 @@ const { createWorker } = require("tesseract.js");
 const bcrypt = require("bcrypt");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const BASE_URL = process.env.BASE_URL || "https://wepdfhub.click";
 
 app.use(cors());
