@@ -3288,6 +3288,10 @@ app.get("/:slug", (req, res, next) => {
   res.send(renderToolPage(tool));
 });
 
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend connected" });
+});
+
 app.use((req, res) => {
   res.status(404).send("Not Found");
 });
