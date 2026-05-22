@@ -1,5 +1,5 @@
 {
-  "name": "wepdfhub",
+  "name": "wepdfhub-backend",
   "version": "3.0.0",
   "private": true,
   "type": "commonjs",
@@ -17,7 +17,6 @@
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.6.0",
-
     "compression": "^1.8.1",
     "docx": "^8.5.0",
     "jszip": "^3.10.1",
