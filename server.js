@@ -3295,6 +3295,10 @@ app.get("/:slug", (req, res, next) => {
   res.send(renderToolPage(tool));
 });
 
+app.get("/", (req, res) => {
+  res.send("WePDFHub Backend Running 🚀");
+});
+
 app.get("/api/test", (req, res) => {
   res.json({ message: "Backend connected" });
 });
