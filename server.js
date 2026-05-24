@@ -70,6 +70,24 @@ const upload = multer({
   }
 });
 
+app.post("/upload", upload.single("file"), (req, res) => {
+  console.log("UPLOAD HIT");
+
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
+  res.json({
+    downloadUrl: `https://wepdfhub-ka-backend-render-per-hai.onrender.com/download/${req.file.filename}`
+  });
+});
+
+app.get("/download/:filename", (req, res) => {
+  const filePath = path.join(uploadDir, req.params.filename);
+
+  res.download(filePath);
+});
+
 /* ================= HOME ROUTE FIX ================= */
 app.post("/signup", async (req, res) => {
   const { username, email, password } = req.body;
